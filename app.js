@@ -1,7 +1,7 @@
 (() => {
   const SETUP_COST = 1500;
   const MAX_AGENTS = 1250;
-  const DEFAULT_API_URL = 'http://127.0.0.1:5056/generate';
+  const DEFAULT_API_URL = 'https://language-retrieve-again-wagon.trycloudflare.com/generate';
   const API_STORAGE_KEY = 'ezmax_api_url';
   const LANG_STORAGE_KEY = 'ezmax_lang';
 
