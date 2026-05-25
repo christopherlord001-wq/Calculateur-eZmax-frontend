@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>eZmax Proposal Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="appbar">
+    <div class="brandMark">eZ</div>
+    <div>
+      <div id="appTitle" class="appTitle">eZmax Proposal Generator</div>
+      <div id="appSubtitle" class="appSubtitle">Calculator and offer builder</div>
+    </div>
+    <button id="langBtn" class="langBtn" type="button">FR</button>
+  </header>
+
+  <main class="shell">
+    <section class="panel inputPanel">
+      <div class="sectionHead">
+        <h1 id="inputsTitle">Proposal Inputs</h1>
+      </div>
+
+      <div class="formGrid">
+        <label class="field fieldWide">
+          <span id="companyNameLabel">Company name</span>
+          <input id="companyName" type="text" autocomplete="organization" placeholder="Real Estate Advisors" />
+        </label>
+
+        <label class="field">
+          <span id="agentsLabel">Real estate agents</span>
+          <input id="agents" type="number" min="1" max="1250" value="18" inputmode="numeric" />
+        </label>
+
+        <label class="field">
+          <span id="apiUrlLabel">Server URL</span>
+          <input id="apiUrl" type="url" spellcheck="false" />
+        </label>
+      </div>
+
+      <div class="moduleGrid" aria-label="Components to include">
+        <label class="moduleOption">
+          <input id="includeEzmax" type="checkbox" checked />
+          <span>
+            <strong>eZmax</strong>
+            <small id="ezmaxDesc">Core brokerage system</small>
+          </span>
+        </label>
+
+        <label class="moduleOption">
+          <input id="includeEdm" type="checkbox" checked />
+          <span>
+            <strong id="edmName">EDM</strong>
+            <small id="edmDesc">Optional document module</small>
+          </span>
+        </label>
+
+        <label class="moduleOption">
+          <input id="includeEzsign" type="checkbox" />
+          <span>
+            <strong>eZsign</strong>
+            <small id="ezsignDesc">Optional signature module</small>
+          </span>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button id="generateBtn" class="primaryBtn" type="button">Generate Word + PDF</button>
+        <button id="resetBtn" class="secondaryBtn" type="button">Reset</button>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel summaryPanel">
+      <div class="sectionHead">
+        <h2 id="summaryTitle">Monthly Summary</h2>
+        <span id="tierBadge" class="badge">11 - 20 agents</span>
+      </div>
+
+      <div class="kpiGrid">
+        <div class="kpi">
+          <span id="setupCostLabel">Setup cost</span>
+          <strong id="setupCost">$1,500.00</strong>
+        </div>
+        <div class="kpi">
+          <span id="monthlyTotalLabel">Monthly total</span>
+          <strong id="monthlyTotal">$475.86</strong>
+        </div>
+        <div class="kpi">
+          <span id="averageCostLabel">Per agent</span>
+          <strong id="averageCost">$26.44</strong>
+        </div>
+      </div>
+
+      <div id="lineItems" class="lineItems"></div>
+    </section>
+
+    <section class="panel detailsPanel">
+      <div class="sectionHead">
+        <h2 id="previewTitle">Calculation Preview</h2>
+      </div>
+      <pre id="calculationPreview" class="preview"></pre>
+    </section>
+
+    <section class="panel pricingPanel">
+      <div class="sectionHead">
+        <h2 id="pricingTitle">Contract Pricing Table</h2>
+      </div>
+      <div class="tableWrap">
+        <table id="pricingTable">
+          <thead>
+            <tr>
+              <th id="thAgents">Agents</th>
+              <th id="thIncluded">Included</th>
+              <th>eZmax</th>
+              <th id="thEzmaxRate">eZmax RPAREA</th>
+              <th id="thEdm">EDM</th>
+              <th id="thEdmRate">EDM RPAREA</th>
+              <th>eZsign</th>
+              <th id="thEzsignRate">eZsign RPAREA</th>
+              <th id="thAdmins">eZsign admins</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
