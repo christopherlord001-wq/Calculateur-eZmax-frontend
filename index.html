@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>eZmax Proposal Generator</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2.3" />
 </head>
 <body>
   <header class="appbar">
@@ -62,6 +62,18 @@
             <strong>eZsign</strong>
             <small id="ezsignDesc">Optional signature module</small>
           </span>
+        </label>
+      </div>
+
+
+      <div class="outputOptions" role="group" aria-label="Output formats">
+        <label class="outputOption">
+          <input id="outputWordCheck" type="checkbox" checked />
+          <span id="outputWordLabel">Word document</span>
+        </label>
+        <label class="outputOption">
+          <input id="outputPdfCheck" type="checkbox" checked />
+          <span id="outputPdfLabel">PDF</span>
         </label>
       </div>
 
@@ -129,6 +141,8 @@
     </section>
   </main>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=2.3"></script>
 </body>
 </html>
+
+
